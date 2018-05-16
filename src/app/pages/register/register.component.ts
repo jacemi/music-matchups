@@ -3,7 +3,7 @@ import { RegisterService } from '../../services/register.service';
 
 @Component({
     templateUrl: './register.component.html',
-    styleUrls: ['./contact.component.scss']
+    styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
     registerData: Object = {
