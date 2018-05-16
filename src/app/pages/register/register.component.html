@@ -1,0 +1,24 @@
+<h2>Register:</h2>
+
+<form>
+    <input type="text" name="username" placeholder="Username:" [(ngModel)]="registrationData.username"><br>
+
+    <input type="text" name="email" placeholder="Email:" [(ngModel)]="registrationData.email"><br>
+
+    <input type="text" name="password" placeholder="Password:" [(ngModel)]="registrationData.password"><br>
+
+    <input type="text" name="first_name" placeholder="First Name:" [(ngModel)]="registrationData.first_name"><br>
+
+    <input type="text" name="last_name" placeholder="Last Name:" [(ngModel)]="registrationData.last_name"><br>
+
+    <input type="text" name="location" placeholder="Location:" [(ngModel)]="registrationData.location"><br>
+
+    <input type="number" name="age" placeholder="Age:" [(ngModel)]="registrationData.age"><br>
+
+
+
+    <button (click)="submit($event)">Submit</button>
+</form>
+
+<br><br>
+{{ registrationData | json }}
