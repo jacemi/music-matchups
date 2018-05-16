@@ -8,6 +8,6 @@ export class RegisterService {
     constructor(private http: HttpClient) { }
 
     submitRegistration(data) {
-        return this.http.post('http://somurl.com', data);
+        return this.http.post('/api/register', data);
     }
 }
