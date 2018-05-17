@@ -6,7 +6,7 @@ import { RegisterService } from '../../services/register.service';
     styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-    registerData: Object = {
+    registrationData: Object = {
         username: '',
         email: '',
         password: '',
@@ -22,7 +22,7 @@ export class RegisterComponent {
     submit(e) {
         e.preventDefault();
         console.log(e);
-        this.registerService.submitRegistration(this.registerData)
+        this.registerService.submitRegistration(this.registrationData)
         .toPromise()
         .then((data) => { console.log(data); })
         .catch((err) => { console.log(err); });
