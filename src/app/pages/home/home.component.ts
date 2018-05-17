@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from '../../services/user.service';
 
 @Component({
     templateUrl: './home.component.html',
@@ -6,17 +7,15 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
     title: string;
-    bands: Object[];
+    users;
 
-    constructor() {
-        this.title = 'app' || '';
-
-        this.bands = [
-            { name: 'Linkin Park', current: false },
-            { name: 'The Beatles', current: false },
-            { name: 'Pink Floyd', current: false },
-            { name: 'Foo Fighters', current: true },
-            { name: 'motmot', current: true }
-        ];
+    constructor(private userService: UserService) {
+        this.userService.getAllUsers()
+        .toPromise()
+        .then((data) => {
+            console.log(data);
+            this.users = data;
+        })
+        .catch((err) => { console.log(err); });
     }
 }
