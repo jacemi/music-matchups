@@ -11,17 +11,25 @@
 <div class="userCardContainer">
   <div *ngFor="let user of users" class="userCard">
     <div class="user-username">{{ user.username }}</div>
-    <div *ngFor="let artist of user.favoriteArtists" class="userFavArtistCard">
-      <div class="user-favArtists">{{ artist.name }}</div> 
+    <div class="favArtistContainer">
+      <div *ngFor="let artist of user.favoriteArtists" class="userFavArtistCard">
+        <div class="user-favArtists">{{ artist.name }}</div>
+      </div>
     </div>
-    <div *ngFor="let tag of user.favoriteTags" class="userFavTagCard"> 
-      <div class="user-favTags">{{ tag.name }}</div>
+    <div class="favTagContainer">
+      <div *ngFor="let tag of user.favoriteTags" class="userFavTagCard">
+        <div class="user-favTags">{{ tag.name }}</div>
+      </div>
     </div>
-    <div *ngFor="let post of user.posts">
-      <div class="user-posts">{{ post.content }}</div>
+    <div class="usersPostContainer">
+      <div *ngFor="let post of user.posts">
+        <div class="user-posts">{{ post.content }}</div>
+      </div>
     </div>
-    <div *ngFor="let comment of user.comments">
-      <div class="user-comments">{{ comment.content }}</div>
+    <div class="usersCommentContainer">
+      <div *ngFor="let comment of user.comments">
+        <div class="user-comments">{{ comment.content }}</div>
+      </div>
     </div>
   </div>
 </div>

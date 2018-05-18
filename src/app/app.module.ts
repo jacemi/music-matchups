@@ -9,6 +9,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LoginService } from './services/login.service';
 import { NavComponent } from './components/nav/nav.component';
+import { PostComponent } from './pages/post/post.component';
+import { PostService } from './services/post.service';
 import { RegisterComponent } from './pages/register/register.component';
 import { RegisterService } from './services/register.service';
 
@@ -18,6 +20,7 @@ import { RegisterService } from './services/register.service';
     HomeComponent,
     LoginComponent,
     NavComponent,
+    PostComponent,
     RegisterComponent
   ],
   imports: [
@@ -28,13 +31,14 @@ import { RegisterService } from './services/register.service';
       [
         { path: '', component: HomeComponent },
         { path: 'login', component: LoginComponent },
+        { path: 'post', component: PostComponent },
         { path: 'register', component: RegisterComponent },
         { path: '**', redirectTo: '', pathMatch: 'full' }
     ],
     { enableTracing: true}
   )
   ],
-  providers: [RegisterService, LoginService],
+  providers: [RegisterService, LoginService, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

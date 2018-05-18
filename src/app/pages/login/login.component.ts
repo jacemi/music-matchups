@@ -19,7 +19,9 @@ export class LoginComponent {
         console.log(e);
         this.loginService.submitLogin(this.loginData)
         .toPromise()
-        .then((data) => { console.log(data); })
+        .then((data) => { 
+            console.log(data);
+        })
         .catch((err) => { console.log(err); });
     }
 }

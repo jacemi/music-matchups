@@ -1,0 +1,21 @@
+.nav {
+  padding: 0;
+  margin: 15px 0 15px 15px;
+  list-style-type: none;
+  background-color: #eee;
+}
+
+.nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+.nav a.active {
+  color: gold;
+}
+/*# sourceMappingURL=nav.component.css.map */
