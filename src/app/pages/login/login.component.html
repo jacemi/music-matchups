@@ -1,0 +1,13 @@
+
+<h2>Login:</h2>
+
+<form>
+    <input type="text" name="email" placeholder="Email:" [(ngModel)]="loginData.email"><br>
+
+    <input type="text" name="password" placeholder="Password:" [(ngModel)]="loginData.password"><br>
+
+    <button (click)="submit($event)">Submit</button>
+</form>
+
+<br><br>
+{{ loginData | json }}

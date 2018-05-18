@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
+import { LoginService } from './services/login.service';
 import { NavComponent } from './components/nav/nav.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { RegisterService } from './services/register.service';
@@ -14,6 +16,7 @@ import { RegisterService } from './services/register.service';
   declarations: [
     AppComponent,
     HomeComponent,
+    LoginComponent,
     NavComponent,
     RegisterComponent
   ],
@@ -24,13 +27,14 @@ import { RegisterService } from './services/register.service';
     RouterModule.forRoot(
       [
         { path: '', component: HomeComponent },
+        { path: 'login', component: LoginComponent },
         { path: 'register', component: RegisterComponent },
         { path: '**', redirectTo: '', pathMatch: 'full' }
     ],
     { enableTracing: true}
   )
   ],
-  providers: [RegisterService],
+  providers: [RegisterService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
