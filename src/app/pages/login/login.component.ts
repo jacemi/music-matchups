@@ -14,9 +14,9 @@ export class LoginComponent {
 
     }
 
-    submit(e) {
-        e.preventDefault();
-        console.log(e);
+    logUserIn(event) {
+        event.preventDefault();
+        console.log(event);
         this.loginService.submitLogin(this.loginData)
         .toPromise()
         .then((data) => { 

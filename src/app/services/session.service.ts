@@ -7,11 +7,10 @@
 // export class SessionService {
 //     isLoggedIn: false;
 //     user: Object = {
-//         username: '',
 //         email: '',
 //         id: 0
 //     };
 //     constructor () {
-//         localStorage.setItem( "username", user.username);
+//         localStorage.setItem( "email", user.email);
 //     }
 // }

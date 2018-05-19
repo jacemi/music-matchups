@@ -1,7 +1,11 @@
 <h2>Write a post:</h2>
 
 <form>
-    <input type="text" name="content" placeholder="write content here:" [(ngModel)]="postData.content"><br>
+    <!-- <input type="text" name="content" placeholder="write content here:" [(ngModel)]="postData.content"><br> -->
+
+    <textarea rows="4" cols="50" name="content" placeholder="write content here:" [(ngModel)]="postData.content">
+        
+        </textarea>
 
     <button (click)="submit($event)">Submit</button>
 </form>
