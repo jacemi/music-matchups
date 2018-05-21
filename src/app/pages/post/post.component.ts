@@ -9,7 +9,7 @@ export class PostComponent {
     postData: Object = {
         content: ''
     };
-    constructor (private postService: PostService) {
+    constructor(private postService: PostService) {
 
     }
 
@@ -17,8 +17,8 @@ export class PostComponent {
         e.preventDefault();
         console.log(e);
         this.postService.submitPost(this.postData)
-        .toPromise()
-        .then((data) => { console.log(data); })
-        .catch((err) => { console.log(err); });
+            .toPromise()
+            .then((data) => { console.log(data); })
+            .catch((err) => { console.log(err); });
     }
 }

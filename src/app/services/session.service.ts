@@ -7,7 +7,9 @@ import { AccountService } from './account.service';
 })
 export class SessionService {
     isLoggedIn: boolean;
-    user: Object;
+    user: Object = {
+
+    }
     constructor(private accountService: AccountService) {
         this.isLoggedIn = false;
         this.user = JSON.parse(localStorage.getItem('user'));
@@ -18,7 +20,6 @@ export class SessionService {
             .submitLogin(data)
             .toPromise()
             .then(user => {
-                console.log('this is the user', user);
                 localStorage.setItem('user', JSON.stringify(user));
                 return this.isLoggedIn = true;
             })

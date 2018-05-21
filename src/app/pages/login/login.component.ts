@@ -10,7 +10,7 @@ export class LoginComponent {
         email: '',
         password: ''
     };
-    constructor (private sessionService: SessionService) {
+    constructor(private sessionService: SessionService) {
 
     }
 
@@ -18,9 +18,9 @@ export class LoginComponent {
         event.preventDefault();
         console.log(event);
         this.sessionService.login(this.loginData)
-        .then((data) => {
-            console.log(data);
-        })
-        .catch((err) => { console.log(err); });
+            .then((data) => {
+                console.log(data);
+            })
+            .catch((err) => { console.log(err); });
     }
 }

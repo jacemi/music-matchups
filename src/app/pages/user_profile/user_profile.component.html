@@ -1,0 +1,72 @@
+<div style="text-align:center">
+        <h1>
+            User Profile for {{user.username}}
+        </h1>
+    </div>
+    <div class="userCardContainer">
+        <div class="userCard">
+            <div class="userInfoContainer">
+                <div class="user-username">
+                    Username: {{ user.username }}</div>
+                <div class="user-email">
+                    Email: {{ user.email }}
+                </div>
+                <div class="user-firstName">
+                    First name: {{ user.first_name }}
+                </div>
+                <div class="user-lastName">
+                    Last name: {{ user.last_name }}
+                </div>
+                <div class="user-location">
+                    Location: {{ user.location }}
+                </div>
+                <div class="user-age">
+                    Age: {{ user.age }}
+                </div>
+                <div class="user-picture">
+                    Profile picture: {{ user.profile_picture }}
+                </div>
+                <div class="user-accountCreatedDate">
+                    Account creation date: {{ user.created_at }}
+                </div>
+            </div>
+        
+            <div class="favArtistContainer">
+                List of favorite artists:
+                <ul *ngFor="let artist of user.favoriteArtists" class="userFavArtistCard">
+                    <li class="user-favArtists">{{ artist.name }}
+                    </li>
+                </ul>
+            </div>
+            <div class="favTagContainer">
+                <div *ngFor="let tag of user.favoriteTags" class="userFavTagCard">
+                    <div class="user-favTags">{{ tag.name }}</div>
+                </div>
+            </div>
+            <div class="usersPostContainer">
+                List of posts by this user:
+                <ul *ngFor="let post of user.posts">
+                    <li class="innerPostContainer">
+
+
+
+                        <div class="user-post-date">{{ post.created_at }}</div>
+                        <div class="user-post-content">{{ post.content }}</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="usersCommentContainer">
+                List of comments by this user:
+                <ul *ngFor="let comment of comments">
+                    <li class="innerCommentContainer">
+
+                        <div class="user-comment-date">{{ comment.created_at }}</div>
+                        <div class="user-comment-content">{{ comment.content }}</div>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    

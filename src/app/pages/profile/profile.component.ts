@@ -28,41 +28,40 @@ export class ProfileComponent {
         name: ''
     };
 
-    constructor(private userService: UserService, private sessionService: SessionService, private artistService: ArtistService, private router: Router ) {
-
+    constructor(private userService: UserService, private sessionService: SessionService, private artistService: ArtistService, private router: Router) {
         this.userService.getSessionUser()
-        .toPromise()
-        .then((data) => {
-            console.log(data);
-            this.user = data;
-        })
-        .catch((err) => {
-            console.log(err); });
+            .toPromise()
+            .then((data) => {
+                console.log(data);
+                this.user = data;
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
-
     submitArtistEntry(event) {
         // event.preventDefaults();
         console.log(event);
         this.artistService.postNewArtist(this.artistData)
-        .toPromise()
-        .then((data) => {
-            console.log(data);
-            return window.location.reload();
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+            .toPromise()
+            .then((data) => {
+                console.log(data);
+                return window.location.reload();
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
     removeFavArtist(name) {
         this.artistService.removeArtistFromFavs(name)
-        .toPromise()
-        .then((data) => {
-            console.log(data);
-            return window.location.reload();
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+            .toPromise()
+            .then((data) => {
+                console.log(data);
+                return window.location.reload();
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
 }

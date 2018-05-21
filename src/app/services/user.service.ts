@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class UserService {
   constructor(private http: HttpClient) { }
@@ -15,8 +15,8 @@ export class UserService {
     return this.http.get('/api/users/profile');
   }
 
-  getUserById(data) {
-    return this.http.get('/api/users/:id', data);
+  getUserByUsername(user) {
+    return this.http.get(`/api/users/${user.username}`, user);
   }
 
   getMatchedUsers() {

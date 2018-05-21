@@ -7,18 +7,18 @@ import { SessionService } from '../../services/session.service';
     styleUrls: ['./nav.component.scss']
 })
 export class NavComponent {
-    constructor (private sessionService: SessionService) {
-    
+    constructor(private sessionService: SessionService) {
+
     }
-    
-    logout(){
+
+    logout() {
         this.sessionService.logout()
-        .then((data) => {
-            console.log(data);
-        })
-        .catch((err) => {
-            console.log(err);
-        })
+            .then((data) => {
+                console.log(data);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
     }
-    
+
 };

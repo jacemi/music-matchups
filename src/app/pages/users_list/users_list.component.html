@@ -8,13 +8,15 @@
       <div class="userCardContainer">
         <div *ngFor="let user of users" class="userCard">
           <div class="userInfoContainer">
-            <div class="user-username">Username: {{ user.username }}</div>
+            <div class="user-username">
+                <a routerLink="/user_profile" (click)="goToUserProfile(user)"> Username: {{ user.username }}</a>
+            </div>
           </div>
           <div class="favArtistContainer">
             List of favorite artists: 
-            <div *ngFor="let artist of user.favoriteArtists" class="userFavArtistCard">
-              <div class="user-favArtists">{{ artist.name }}</div>
-            </div>
+            <ul *ngFor="let artist of user.favoriteArtists" class="userFavArtistCard">
+              <li class="user-favArtists">{{ artist.name }}</li>
+            </ul>
           </div>
           <div class="favTagContainer">
             <div *ngFor="let tag of user.favoriteTags" class="userFavTagCard">
@@ -23,15 +25,15 @@
           </div>
           <div class="usersPostContainer">
             List of posts by this user:
-            <div *ngFor="let post of user.posts">
-              <div class="user-posts">{{ post.content }}</div>
-            </div>
+            <ul *ngFor="let post of user.posts">
+              <li class="user-posts">{{ post.content }}</li>
+            </ul>
           </div>
           <div class="usersCommentContainer">
             List of comments by this user:
-            <div *ngFor="let comment of user.comments">
-              <div class="user-comments">{{ comment.content }}</div>
-            </div>
+            <ul *ngFor="let comment of user.comments">
+              <li class="user-comments">{{ comment.content }}</li>
+            </ul>
           </div>
         </div>
       </div>
