@@ -10,7 +10,9 @@
 
 <div class="userCardContainer">
   <div *ngFor="let user of users" class="userCard">
-    <div class="user-username">{{ user.username }}</div>
+    <div class="userInfoContainer">
+      <div class="user-username">{{ user.username }}</div>
+    </div>
     <div class="favArtistContainer">
       <div *ngFor="let artist of user.favoriteArtists" class="userFavArtistCard">
         <div class="user-favArtists">{{ artist.name }}</div>

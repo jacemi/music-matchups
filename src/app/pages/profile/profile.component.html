@@ -1,0 +1,62 @@
+<div style="text-align:center">
+    <h1>
+        User Profile
+    </h1>
+</div>
+<div class="userCardContainer">
+    <div class="userCard">
+        <div class="userInfoContainer">
+            <div class="user-username">
+                {{ user.username }}</div>
+            <div class="user-email">
+                {{ user.email }}
+            </div>
+            <div class="user-firstName">
+                {{ user.first_name }}
+            </div>
+            <div class="user-lastName">
+                {{ user.last_name }}
+            </div>
+            <div class="user-location">
+                {{ user.location }}
+            </div>
+            <div class="user-age">
+                {{ user.age }}
+            </div>
+            <div class="user-picture">
+                {{ user.profile_picture }}
+            </div>
+            <div class="user-accountCreatedDate">
+                {{ user.created_at }}
+            </div>
+        </div>
+        <div class="favArtistForm">
+            <form>
+                <input type="text" name="name" placeholder="Name of artist you like" [(ngModel)]="artistData.name">
+                <br>
+
+                <button (click)="submitArtistEntry($event)">Submit</button>
+            </form>
+        </div>
+        <div class="favArtistContainer">
+            <div *ngFor="let artist of user.favoriteArtists" class="userFavArtistCard">
+                <div class="user-favArtists">{{ artist.name }}</div>
+            </div>
+        </div>
+        <div class="favTagContainer">
+            <div *ngFor="let tag of user.favoriteTags" class="userFavTagCard">
+                <div class="user-favTags">{{ tag.name }}</div>
+            </div>
+        </div>
+        <div class="usersPostContainer">
+            <div *ngFor="let post of user.posts">
+                <div class="user-posts">{{ post.content }}</div>
+            </div>
+        </div>
+        <div class="usersCommentContainer">
+            <div *ngFor="let comment of comments">
+                <div class="user-comments">{{ comment.content }}</div>
+            </div>
+        </div>
+    </div>
+</div>

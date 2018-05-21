@@ -10,4 +10,17 @@ export class UserService {
   getAllUsers() {
     return this.http.get('/api/users');
   }
+
+  getSessionUser() {
+    return this.http.get('/api/users/profile');
+  }
+
+  getUserById(data) {
+    return this.http.get('/api/users/:id', data);
+  }
+
+  getMatchedUsers() {
+    return this.http.get('/api/users/match')
+  }
+
 }

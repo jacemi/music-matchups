@@ -7,12 +7,16 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
-import { LoginService } from './services/login.service';
 import { NavComponent } from './components/nav/nav.component';
 import { PostComponent } from './pages/post/post.component';
 import { PostService } from './services/post.service';
+import { ProfileComponent } from './pages/profile/profile.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { RegisterService } from './services/register.service';
+import { UsersListComponent } from './pages/users_list/users_list.component';
+
+import { AccountService } from './services/account.service';
+import { ArtistService } from './services/artist.service';
+import { SessionService } from './services/session.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,9 @@ import { RegisterService } from './services/register.service';
     LoginComponent,
     NavComponent,
     PostComponent,
-    RegisterComponent
+    ProfileComponent,
+    RegisterComponent,
+    UsersListComponent
   ],
   imports: [
     BrowserModule,
@@ -32,13 +38,15 @@ import { RegisterService } from './services/register.service';
         { path: '', component: HomeComponent },
         { path: 'login', component: LoginComponent },
         { path: 'post', component: PostComponent },
+        { path: 'profile', component: ProfileComponent },
         { path: 'register', component: RegisterComponent },
+        { path: 'users_list', component: UsersListComponent},
         { path: '**', redirectTo: '', pathMatch: 'full' }
     ],
     { enableTracing: true}
   )
   ],
-  providers: [RegisterService, LoginService, PostService],
+  providers: [AccountService, ArtistService, SessionService, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

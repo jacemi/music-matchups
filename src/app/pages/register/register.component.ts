@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RegisterService } from '../../services/register.service';
+import { AccountService } from '../../services/account.service';
 
 @Component({
     templateUrl: './register.component.html',
@@ -15,14 +15,14 @@ export class RegisterComponent {
         location: '',
         age: 0
     };
-    constructor (private registerService: RegisterService) {
+    constructor (private accountService: AccountService) {
 
     }
 
-    submit(e) {
-        e.preventDefault();
-        console.log(e);
-        this.registerService.submitRegistration(this.registrationData)
+    submit(event) {
+        event.preventDefault();
+        console.log(event);
+        this.accountService.submitRegistration(this.registrationData)
         .toPromise()
         .then((data) => { console.log(data); })
         .catch((err) => { console.log(err); });
