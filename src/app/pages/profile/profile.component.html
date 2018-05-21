@@ -42,7 +42,10 @@
         <div class="favArtistContainer">
             List of favorite artists:
             <div *ngFor="let artist of user.favoriteArtists" class="userFavArtistCard">
-                <div class="user-favArtists">{{ artist.name }}</div>
+                <div class="user-favArtists">{{ artist.name }}
+
+                        <div (click)="removeFavArtist(artist)" class="removeButton">X</div>
+                </div>
             </div>
         </div>
         <div class="favTagContainer">

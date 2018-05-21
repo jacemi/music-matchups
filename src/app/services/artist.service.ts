@@ -23,6 +23,10 @@ export class ArtistService {
         return this.http.post('/api/favoriteArtists', data);
     }
 
+    removeArtistFromFavs(data) {
+        return this.http.put('/api/favoriteArtists', data);
+    }
+
     putArtistById(data) {
         return this.http.get('/api/favoriteArtists/:id');
     }

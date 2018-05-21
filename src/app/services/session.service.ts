@@ -13,33 +13,18 @@ export class SessionService {
         this.user = JSON.parse(localStorage.getItem('user'));
     }
 
-    register(data) {
-        return this.accountService
-            .submitRegistration(data)
-            .toPromise()
-            .then(user => {
-                console.log(user);
-                localStorage.setItem('user', JSON.stringify(user));
-                return (this.isLoggedIn = true);
-            })
-            .catch(err => {
-                console.log(err);
-                return (this.isLoggedIn = false);
-            });
-    }
-
     login(data) {
         return this.accountService
             .submitLogin(data)
             .toPromise()
             .then(user => {
-                console.log(user);
+                console.log('this is the user', user);
                 localStorage.setItem('user', JSON.stringify(user));
-                return (this.isLoggedIn = true);
+                return this.isLoggedIn = true;
             })
             .catch(err => {
                 console.log(err);
-                return (this.isLoggedIn = false);
+                return this.isLoggedIn = false;
             });
     }
 
@@ -49,16 +34,16 @@ export class SessionService {
             .toPromise()
             .then(data => {
                 localStorage.removeItem('user');
-                return (this.isLoggedIn = false);
+                return this.isLoggedIn = false;
             })
             .catch(err => {
                 console.log(err);
-                return (this.isLoggedIn = false);
+                return this.isLoggedIn = false;
             });
     }
 
-    getUserInfo() {
-        return this.user;
-    }
 
+  getUserStatus() {
+    return this.user;
+  }
 }

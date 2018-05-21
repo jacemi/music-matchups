@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AccountService } from '../../services/account.service';
+import { SessionService } from '../../services/session.service';
 
 @Component({
     templateUrl: './login.component.html',
@@ -10,16 +10,15 @@ export class LoginComponent {
         email: '',
         password: ''
     };
-    constructor (private accountService: AccountService) {
+    constructor (private sessionService: SessionService) {
 
     }
 
     logUserIn(event) {
         event.preventDefault();
         console.log(event);
-        this.accountService.submitLogin(this.loginData)
-        .toPromise()
-        .then((data) => { 
+        this.sessionService.login(this.loginData)
+        .then((data) => {
             console.log(data);
         })
         .catch((err) => { console.log(err); });
