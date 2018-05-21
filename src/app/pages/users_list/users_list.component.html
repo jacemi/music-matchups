@@ -8,9 +8,10 @@
       <div class="userCardContainer">
         <div *ngFor="let user of users" class="userCard">
           <div class="userInfoContainer">
-            <div class="user-username">{{ user.username }}</div>
+            <div class="user-username">Username: {{ user.username }}</div>
           </div>
           <div class="favArtistContainer">
+            List of favorite artists: 
             <div *ngFor="let artist of user.favoriteArtists" class="userFavArtistCard">
               <div class="user-favArtists">{{ artist.name }}</div>
             </div>
@@ -21,11 +22,13 @@
             </div>
           </div>
           <div class="usersPostContainer">
+            List of posts by this user:
             <div *ngFor="let post of user.posts">
               <div class="user-posts">{{ post.content }}</div>
             </div>
           </div>
           <div class="usersCommentContainer">
+            List of comments by this user:
             <div *ngFor="let comment of user.comments">
               <div class="user-comments">{{ comment.content }}</div>
             </div>
